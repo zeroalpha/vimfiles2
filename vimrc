@@ -9,6 +9,9 @@ call vundle#rc()
 
 " Let Vundle manage Vundle. Required!
 Bundle 'gmarik/vundle'
+  " :BundleInstall        -> install all Bundle vom vimrc
+  " :BundleInstall <TAB>  -> displays known scripts
+  " :BundleSearch
 
 " Language-specific syntax files
 Bundle 'vim-ruby/vim-ruby'
@@ -23,7 +26,7 @@ Bundle "kchmck/vim-coffee-script"
 " Bundle 'dougireton/vim-ps1'
 
 " Comment plugin
-Bundle 'tpope/vim-commentary'                   
+Bundle 'tpope/vim-commentary'
     " gc<MOVE>  or gcc , repeat with .
 
 " Syntax check on buffer save
@@ -49,6 +52,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'file-line'
 Bundle 'ZoomWin'
     " Press <c-w>o : the current window zooms into a full screen
     " Press <c-w>o again: the previous set of windows is restored
@@ -151,10 +155,10 @@ set nonumber			      " show line numbers
 " ----------------------------------------------------------------------------
 "  syntax, highlighting and spelling
 " ----------------------------------------------------------------------------
-let g:solarized_termcolors=256   
+let g:solarized_termcolors=256
 set t_Co=256
 set background=dark
-colorscheme xoria256
+colorscheme railscasts
 "set colorcolumn=80    " display a line in column 80 to show you
                       " when to line break.
 
@@ -267,7 +271,7 @@ set nrformats-=octal      " don't treat numbers with leading zeros as octal
 "  tabs and indenting
 " ----------------------------------------------------------------------------
 set smarttab              " <TAB> in front of line inserts 'shiftwidth' blanks
-set shiftround            " round to 'shiftwidth' for "<<" and ">>" 
+set shiftround            " round to 'shiftwidth' for "<<" and ">>"
 set autoindent
 set tabstop=2
 set shiftwidth=2
@@ -324,6 +328,7 @@ autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:las
 set autoread			    " Automatically re-read files changed outside
                       " of Vim
 autocmd CmdwinEnter * nnoremap <buffer> <esc> :q<cr>
+autocmd BufWritePre * :%s/\s\+$//e
 
 " ----------------------------------------------------------------------------
 "  the swap file
