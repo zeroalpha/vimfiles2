@@ -15,6 +15,8 @@ Bundle 'elzr/vim-json'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-git'
 Bundle 'dougireton/vim-ps1'
+Bundle "tpope/vim-rails"
+Bundle "kchmck/vim-coffee-script"
 
 " Comment plugin
 Bundle 'tpope/vim-commentary'
@@ -42,9 +44,14 @@ Bundle 'godlygeek/tabular'
 " File managers/explorers
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
+Bundle "tpope/vim-eunuch"
 
 " Colorschemes
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+set rtp+={path}/powerline/bindings/vim
+
+
 
 if has('autocmd')
   filetype plugin indent on	  " Turn on Filetype detection, plugins, and
@@ -75,6 +82,10 @@ set smartcase			  " override 'ignorecase' when pattern
 "  tags
 " ----------------------------------------------------------------------------
 
+set tags=tags;/     "ctags soll nach "tags" auch rekursiv suchen
+set tags+=gems.tags
+set tags+=;
+
 " ----------------------------------------------------------------------------
 "  displaying text
 " ----------------------------------------------------------------------------
@@ -91,7 +102,7 @@ set showbreak=↪\ \ 		" string to put before wrapped screen
 set sidescrolloff=2		" min # of columns to keep left/right of cursor
 set display+=lastline " show last line, even if it doesn't fit in the window
 
-set cmdheight=2 		  " # of lines for the command window
+"set cmdheight=2 		  " # of lines for the command window
                       " cmdheight=2 helps avoid 'Press ENTER...'
                       " prompts
 
@@ -104,14 +115,14 @@ if &listchars ==# 'eol:$'
   endif
 endif
 
-set number			      " show line numbers
+set nonumber			      " show line numbers
 
 " ----------------------------------------------------------------------------
 "  syntax, highlighting and spelling
 " ----------------------------------------------------------------------------
 colorscheme solarized
 set background=dark
-set colorcolumn=80    " display a line in column 80 to show you
+"set colorcolumn=80    " display a line in column 80 to show you
                       " when to line break.
 
 " ----------------------------------------------------------------------------
@@ -160,6 +171,11 @@ set ttyfast			      " this is the 21st century, people
 " ----------------------------------------------------------------------------
 "  using the mouse
 " ----------------------------------------------------------------------------
+"some stuff to get the mouse going in term
+set mouse=a
+set ttymouse=xterm2
+
+set mouse=
 
 " ----------------------------------------------------------------------------
 "  GUI				      " Set these options in .gvimrc
@@ -194,7 +210,7 @@ set clipboard=unnamed	" Yank to the system clipboard by default
 set backspace=indent,eol,start  "backspace over everything
 
 if v:version > 7.03 || v:version == 7.03 && has("patch541")
-  set formatoptions+=j 	" delete comment char on second line when
+  "set formatoptions+=j 	" delete comment char on second line when
                         " joining two commented lines
 endif
 
@@ -209,11 +225,17 @@ set completeopt+=longest 	" better omni-complete menu
 set nrformats-=octal      " don't treat numbers with leading zeros as octal
                           " when incrementing/decrementing
 
+
 " ----------------------------------------------------------------------------
 "  tabs and indenting
 " ----------------------------------------------------------------------------
 set smarttab              " <TAB> in front of line inserts 'shiftwidth' blanks
 set shiftround            " round to 'shiftwidth' for "<<" and ">>" 
+set autoindent
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
 
 " ----------------------------------------------------------------------------
 "  folding
@@ -227,12 +249,44 @@ set nofoldenable 		  " When opening files, all folds open by default
 " ----------------------------------------------------------------------------
 "  mapping
 " ----------------------------------------------------------------------------
+nmap <F1> <Esc>
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+map <C-Right> gt
+map <A-Right> gt
+map <C-Left> gT
+map <A-Left> gT
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+nnoremap <F3> :nohls<CR>
+"fixing the tmux problems
+nnoremap [1;5C gt
+nnoremap [1;5D gT
+nnoremap [H gt
+
+" Fixing screen Problems
+map OH <Home>
+map OF <End>
+
+inoremap OH <Home>
+inoremap OF <End>
+
+" ,rt -> regeneriert tags mit gems
+map <leader>rt :!ctags --extra=+f --languages=-javascript --exclude=.git --exclude=log -R * `rvm gemdir`/gems/* `rvm gemdir`/bundler/gems/*<CR><C-M>
+
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+
+" http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
+" completion beschleunigen
+autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
+autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
 
 " ----------------------------------------------------------------------------
 "  reading and writing files
 " ----------------------------------------------------------------------------
 set autoread			    " Automatically re-read files changed outside
                       " of Vim
+autocmd CmdwinEnter * nnoremap <buffer> <esc> :q<cr>
 
 " ----------------------------------------------------------------------------
 "  the swap file
@@ -254,7 +308,7 @@ set history=200 		" Save more commands in history
 set wildmode=list:longest,full
 
 " File tab completion ignores these file patterns
-set wildignore+=*.exe,*.swp,.DS_Store
+set wildignore+=*.exe,*.swp,.DS_Store,*~,*.o
 set wildmenu
 
 " Add guard around 'wildignorecase' to prevent terminal vim error
@@ -304,6 +358,35 @@ set gdefault                    " For :substitute, use the /g flag by default
 " Make gf work on Chef include_recipe lines
 " Add all cookbooks/*/recipe dirs to Vim's path variable
 autocmd BufRead,BufNewFile */cookbooks/*/recipes/*.rb setlocal path+=recipes;/cookbooks/**1
+augroup module
+  autocmd BufRead,BufNewFile *.module set filetype=php
+  autocmd BufRead,BufNewFile *.install set filetype=php
+  autocmd BufRead,BufNewFile *.test set filetype=php
+augroup END
+autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
+autocmd BufRead,BufNewFile Guardfile set filetype=ruby
+autocmd BufRead,BufNewFile vhost.conf set filetype=apache
+autocmd BufRead,BufNewFile .bash_aliases set filetype=sh
+autocmd BufRead,BufNewFile bash_aliases set filetype=sh
+autocmd BufRead,BufNewFile .tmux.conf set filetype=sh
+autocmd BufRead,BufNewFile vhost_ssl.conf set filetype=apache
+autocmd BufRead,BufNewFile *.arb set filetype=ruby
+autocmd BufRead,BufNewFile *.rabl set filetype=ruby
+autocmd BufRead,BufNewFile *.prawn set filetype=ruby
+autocmd BufRead,BufNewFile *.scss set fdm=indent
+au BufNewFile,BufReadPost *.coffee setl foldmethod=indent shiftwidth=2 expandtab
+au BufNewFile,BufRead /etc/init/*.conf set ft=upstart
+au BufNewFile,BufRead /etc/init/*.conf set ft=upstart
+augroup yaml
+  autocmd Filetype yaml set fdm=indent
+  autocmd BufRead,BufNewFile *de.yml silent setl spell spelllang=de
+augroup END
+autocmd User Rails Rnavcommand cell app/cells -glob=**/* -suffix=_cell.rb
+autocmd User Rails Rnavcommand dec app/decorators -glob=**/* -suffix=_decorator.rb
+autocmd User Rails Rnavcommand concern  app/concerns -glob=**/*
+autocmd User Rails Rnavcommand config   config   -glob=*.*  -suffix= -default=routes.rb
+autocmd User Rails Rnavcommand routes config/ -glob=routes.rb -suffix= -default=routes.rb
+autocmd User Rails Rnavcommand api lib/empfehlungsbund_api/ -glob=*rb -suffix= -default=api.rb
 
 
 " ----------------------------------------------------------------------------

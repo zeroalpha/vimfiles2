@@ -9,27 +9,17 @@ Vim files for OSX and Windows
 
     ```
     $ git clone https://github.com/dougireton/vimfiles.git ~/.vim
+    cd ~/.vim
     ````
 
-2. Create symlinks to .vimrc and .gvimrc:
 
+2. Optional: install vim:
     ```
-    $ ln -s ~/.vim/vimrc ~/.vimrc
-    $ ln -s ~/.vim/gvimrc ~/.gvimrc
+    rake vim
+    ```
+
+3. Install Vundle, Powerline with fonts and stuff
     ````
+    rake all
+    ```
 
-3. Make the .vim/bundle directory:
-    ````
-    $ mkdir ~/.vim/bundle
-    ````
-
-4. Setup [Vundle]:
-
-     ```
-    $ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-     ```
-
-5. Install configured bundles:
-
-    Launch `mvim`, run `:BundleInstall` 
-    (or `mvim +BundleInstall +qall` for CLI lovers)
