@@ -5,7 +5,9 @@ Vim files for Linux and Windows
 
 
 ## First time install for Mac OS X
-    0. Fast
+
+0. Fast
+
     ```
     \curl -L https://raw.github.com/zealot128/vimfiles2/master/install.sh | bash
     ```
