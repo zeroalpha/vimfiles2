@@ -2,6 +2,7 @@
 nnoremap <leader>cf :CtrlP<cr>
 nnoremap <leader>cb :CtrlPBuffer<cr>
 nnoremap <leader>cm :CtrlPMRU<cr>
+nnoremap <C-b> :CtrlPMixed<cr>
 
 " tags = ct
 " directory = cd

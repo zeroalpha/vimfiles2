@@ -14,22 +14,34 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'elzr/vim-json'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-git'
-Bundle 'dougireton/vim-ps1'
 Bundle "tpope/vim-rails"
+Bundle "tpope/vim-rake"
 Bundle "kchmck/vim-coffee-script"
 
+" Windows Powershell
+" Bundle 'dougireton/vim-ps1'
+
 " Comment plugin
-Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-commentary'                   
+    " gc<MOVE>  or gcc , repeat with .
 
 " Syntax check on buffer save
 Bundle 'scrooloose/syntastic'
 
 " Git plugins
 Bundle 'tpope/vim-fugitive'
+    " Gdiff, Gedit Gstatus Gcommit Gremove Gmove Gread Ggrep
 Bundle 'gregsexton/gitv'
+    " :Gitv  Mini-Git browser
 
 " Lightweight support for Ruby's Bundler
 Bundle 'tpope/vim-bundler'
+    " :Bundle, which wraps bundle.
+    " An internalized version of bundle open: :Bopen (and :Bsplit, :Btabedit, etc.).
+    " 'path' and 'tags' are automatically altered to include all gems from your bundle. (Generate those tags with gem-ctags!)
+    " Highlight Bundler keywords in Gemfile.
+    " Support for gf in Gemfile.lock, plus syntax highlighting that distinguishes between installed and missing gems.
+
 
 " Various editing plugins
 Bundle 'tpope/vim-repeat'
@@ -37,14 +49,27 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'ZoomWin'
+    " Press <c-w>o : the current window zooms into a full screen
+    " Press <c-w>o again: the previous set of windows is restored
 Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-endwise'
 Bundle 'godlygeek/tabular'
+    " Align Text with:
+    " :Tabularize /,
 
 " File managers/explorers
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
 Bundle "tpope/vim-eunuch"
+    " :Unlink: Delete a buffer and the file on disk simultaneously.
+    " :Remove: Like :Unlink, but doesn't require a neckbeard.
+    " :Move: Rename a buffer and the file on disk simultaneously.
+    " :Chmod: Change the permissions of the current file.
+    " :Find: Run find and load the results into the quickfix list.
+    " :Locate: Run locate and load the results into the quickfix list.
+    " :SudoWrite: Write a privileged file with sudo.
+    " :W: Write every open window. Handy for kicking off tools like guard.
+
 
 " Colorschemes
 Bundle 'altercation/vim-colors-solarized'
@@ -120,8 +145,10 @@ set nonumber			      " show line numbers
 " ----------------------------------------------------------------------------
 "  syntax, highlighting and spelling
 " ----------------------------------------------------------------------------
-colorscheme solarized
+let g:solarized_termcolors=256   
+set t_Co=256
 set background=dark
+colorscheme xoria256
 "set colorcolumn=80    " display a line in column 80 to show you
                       " when to line break.
 
@@ -172,9 +199,8 @@ set ttyfast			      " this is the 21st century, people
 "  using the mouse
 " ----------------------------------------------------------------------------
 "some stuff to get the mouse going in term
-set mouse=a
-set ttymouse=xterm2
-
+" set mouse=a
+" set ttymouse=xterm2
 set mouse=
 
 " ----------------------------------------------------------------------------
