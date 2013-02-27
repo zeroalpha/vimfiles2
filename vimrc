@@ -71,6 +71,11 @@ Bundle "tpope/vim-eunuch"
     " :SudoWrite: Write a privileged file with sudo.
     " :W: Write every open window. Handy for kicking off tools like guard.
 
+" Snippets and Dependencies
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "honza/snipmate-snippets"
+Bundle "garbas/vim-snipmate"
 
 " Colorschemes
 Bundle 'altercation/vim-colors-solarized'
@@ -351,19 +356,6 @@ endif
 " ----------------------------------------------------------------------------
 "  executing external commands
 " ----------------------------------------------------------------------------
-
-if has("win32") || has("gui_win32")
-  if executable("PowerShell")
-    " Set PowerShell as the shell for running external ! commands
-    " http://stackoverflow.com/questions/7605917/system-with-powershell-in-vim
-    set shell=PowerShell
-    set shellcmdflag=-ExecutionPolicy\ RemoteSigned\ -Command
-    set shellquote=\"
-    " TODO: shellxquote must be a literal space character.
-    " Fix my trim trailing whitespace command to not run automatically on save
-    set shellxquote= 
-  endif
-endif
 
 " ----------------------------------------------------------------------------
 "  running make and jumping to errors

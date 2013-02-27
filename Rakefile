@@ -53,7 +53,7 @@ end
 
 namespace :bundle do
   desc "Install Vundle" 
-  task :install do
+  task :clone do
     sh <<-SH
     mkdir -p ~/.vim/bundle
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
@@ -61,11 +61,11 @@ namespace :bundle do
   end
 
   desc "Install Vundle packages"
-  task :bundle do
+  task :install do
     sh <<-CMD
     vim +BundleInstall +qall
     CMD
   end
 end
-task :default => :bundle
-task :all => [:symlink, :bundle, :powerline]
+task :bundle => ["bundle:install"]
+task :all => [:symlink, "bundle:clone", "bundle:install", :powerline]
