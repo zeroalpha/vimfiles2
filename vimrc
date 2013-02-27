@@ -6,6 +6,7 @@ filetype off 			" Required for Vundle
 set rtp+=~/.vim/bundle/vundle/	" Add vundle to the RuntimePath
 call vundle#rc()
 
+
 " Let Vundle manage Vundle. Required!
 Bundle 'gmarik/vundle'
 
@@ -234,6 +235,11 @@ set clipboard=unnamed	" Yank to the system clipboard by default
 "  editing text			" TODO: look at these options
 " ----------------------------------------------------------------------------
 set backspace=indent,eol,start  "backspace over everything
+set backspace=2
+
+" Backspace Problem where ^? insertet
+set t_kb=
+fixdel
 
 if v:version > 7.03 || v:version == 7.03 && has("patch541")
   "set formatoptions+=j 	" delete comment char on second line when

@@ -1,10 +1,16 @@
 Vimfiles
 ========
 
-Vim files for OSX and Windows
+Vim files for Linux and Windows
 
 
 ## First time install for Mac OS X
+    0. Fast
+    ```
+    \curl -L https://raw.github.com/zealot128/vimfiles2/master/install.sh | bash
+    ```
+
+
 1. Clone this repository:
 
     ```
