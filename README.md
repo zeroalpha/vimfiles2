@@ -4,7 +4,7 @@ Vimfiles
 Vim files for Linux and Windows
 
 
-## First time install for Mac OS X
+## First time install 
 
 0. Fast
 
