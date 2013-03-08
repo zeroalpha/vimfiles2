@@ -11,3 +11,4 @@ nnoremap <C-b> :CtrlPMixed<cr>
 
 " registers = cr
 " marks = c'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$|vendor\/gems'
