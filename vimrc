@@ -85,8 +85,6 @@ Bundle "garbas/vim-snipmate"
 
 " Colorschemes
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-set rtp+={path}/powerline/bindings/vim
 
 
 
@@ -415,8 +413,8 @@ augroup END
 autocmd User Rails Rnavcommand cell app/cells -glob=**/* -suffix=_cell.rb
 autocmd User Rails Rnavcommand dec app/decorators -glob=**/* -suffix=_decorator.rb
 autocmd User Rails Rnavcommand concern  app/concerns -glob=**/*
-autocmd User Rails Rnavcommand config   config   -glob=*.*  -suffix= -default=routes.rb
-autocmd User Rails Rnavcommand routes config/ -glob=routes.rb -suffix= -default=routes.rb
+command Rroutes Rinitializer
+" autocmd User Rails Rnavcommand routes config/ -glob=routes.rb -suffix= -default=routes.rb
 autocmd User Rails Rnavcommand api lib/empfehlungsbund_api/ -glob=*rb -suffix= -default=api.rb
 
 
@@ -426,3 +424,5 @@ autocmd User Rails Rnavcommand api lib/empfehlungsbund_api/ -glob=*rb -suffix= -
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+ " Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+ " set rtp+={path}/powerline/bindings/vim
