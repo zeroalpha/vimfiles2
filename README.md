@@ -4,7 +4,7 @@ Vimfiles
 Vim files for Linux and Windows
 
 
-## First time install for Mac OS X
+## First time install 
 
 0. Fast
 
@@ -21,12 +21,14 @@ Vim files for Linux and Windows
     ````
 
 
-2. Optional: install vim:
+2. Optional: install vim with python and ruby support (needed for some plugins) 
+
     ```
     rake vim
     ```
 
 3. Install Vundle, Powerline with fonts and stuff
+
     ````
     rake all
     ```

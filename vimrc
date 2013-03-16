@@ -50,6 +50,8 @@ Bundle 'tpope/vim-bundler'
 " Various editing plugins
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
+   " Parentheses, html tags surround:
+   "  * visual select:  S followed by on char or html tag
 Bundle 'tpope/vim-unimpaired'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'file-line'
@@ -414,8 +416,8 @@ augroup END
 autocmd User Rails Rnavcommand cell app/cells -glob=**/* -suffix=_cell.rb
 autocmd User Rails Rnavcommand dec app/decorators -glob=**/* -suffix=_decorator.rb
 autocmd User Rails Rnavcommand concern  app/concerns -glob=**/*
-autocmd User Rails Rnavcommand config   config   -glob=*.*  -suffix= -default=routes.rb
-autocmd User Rails Rnavcommand routes config/ -glob=routes.rb -suffix= -default=routes.rb
+command Rroutes Rinitializer
+" autocmd User Rails Rnavcommand routes config/ -glob=routes.rb -suffix= -default=routes.rb
 autocmd User Rails Rnavcommand api lib/empfehlungsbund_api/ -glob=*rb -suffix= -default=api.rb
 
 
@@ -424,4 +426,14 @@ autocmd User Rails Rnavcommand api lib/empfehlungsbund_api/ -glob=*rb -suffix= -
 " ----------------------------------------------------------------------------
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
+endif
+ " Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+ " set rtp+={path}/powerline/bindings/vim
+
+
+if &term =~ '256color'
+  " Disable Background Color Erase (BCE) so that color schemes
+  " work properly when Vim is used inside tmux and GNU screen.
+  " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
+  set t_ut=
 endif

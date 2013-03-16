@@ -37,7 +37,9 @@ namespace :powerline do
       wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf -O ~/.fonts/PowerlineSymbols.otf
       fc-cache -vf ~/.fonts
       mkdir -p ~/.config/fontconfig/conf.d/
+      mkdir -p ~/.fonts.conf.d
       wget https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf -P ~/.config/fontconfig/conf.d/10-powerline-symbols.conf
+      cp ~/.config/fontconfig/conf.d/10-powerline-symbols.conf ~/.fonts.conf.d/10-powerline-symbols.conf
       echo "Fonts installed, restart terminal"
     CMD
   end
