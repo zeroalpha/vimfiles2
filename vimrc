@@ -83,10 +83,11 @@ Bundle "garbas/vim-snipmate"
 
 " Colorschemes
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-set rtp+={path}/powerline/bindings/vim
+" Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" set rtp+={path}/powerline/bindings/vim
 
 
+Bundle 'airblade/vim-gitgutter'
 
 if has('autocmd')
   filetype plugin indent on	  " Turn on Filetype detection, plugins, and

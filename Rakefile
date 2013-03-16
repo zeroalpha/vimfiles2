@@ -26,7 +26,8 @@ namespace :powerline do
   desc "install powerline"
   task :install do
     sh <<-CMD
-      pip install --user git+git://github.com/Lokaltog/powerline
+      sudo apt-get install python-pip
+      pip install --user -U git+git://github.com/Lokaltog/powerline
     CMD
   end
   desc "install powerline fonts"
@@ -52,7 +53,7 @@ task :symlink do
 end
 
 namespace :bundle do
-  desc "Install Vundle" 
+  desc "Install Vundle"
   task :clone do
     sh <<-SH
     mkdir -p ~/.vim/bundle
