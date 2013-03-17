@@ -22,6 +22,10 @@ Bundle "tpope/vim-rails"
 Bundle "tpope/vim-rake"
 Bundle "kchmck/vim-coffee-script"
 
+
+Bundle 'kana/vim-textobj-user'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+
 " Windows Powershell
 " Bundle 'dougireton/vim-ps1'
 
