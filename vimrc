@@ -93,7 +93,7 @@ Bundle 'altercation/vim-colors-solarized'
 " set rtp+={path}/powerline/bindings/vim
 
 
-Bundle 'airblade/vim-gitgutter'
+" Bundle 'airblade/vim-gitgutter'
 
 if has('autocmd')
   filetype plugin indent on	  " Turn on Filetype detection, plugins, and
@@ -268,7 +268,10 @@ set showmatch  			    " when inserting a bracket, briefly jump to its
 set nojoinspaces	  	  " Use only one space after '.' when joining
                         " lines, instead of two
 
-set completeopt+=longest 	" better omni-complete menu
+" set completeopt+=longest 	" better omni-complete menu
+set complete=.,w,b,u,t
+set completeopt=menuone
+
 
 set nrformats-=octal      " don't treat numbers with leading zeros as octal
                           " when incrementing/decrementing
@@ -288,7 +291,15 @@ set expandtab
 " ----------------------------------------------------------------------------
 "  folding
 " ----------------------------------------------------------------------------
-set nofoldenable 		  " When opening files, all folds open by default
+" set nofoldenable 		  " When opening files, all folds open by default
+if has("folding")
+  nnoremap <space> za
+  set foldenable
+  set foldmethod=syntax
+  set foldlevel=1
+  set foldnestmax=6
+  set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
+endif
 
 " ----------------------------------------------------------------------------
 "  diff mode
@@ -358,6 +369,10 @@ set wildmode=list:longest,full
 
 " File tab completion ignores these file patterns
 set wildignore+=*.exe,*.swp,.DS_Store,*~,*.o
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/log/*
+set wildignore+=*/coverage/*
+set wildignore+=*/public/system/*  " Rails images
 set wildmenu
 
 " Add guard around 'wildignorecase' to prevent terminal vim error
