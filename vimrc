@@ -21,6 +21,7 @@ Bundle 'tpope/vim-git'
 Bundle "tpope/vim-rails"
 Bundle "tpope/vim-rake"
 Bundle "kchmck/vim-coffee-script"
+Bundle 'derekwyatt/vim-scala'
 
 
 Bundle 'kana/vim-textobj-user'
