@@ -82,10 +82,10 @@ Bundle "tpope/vim-eunuch"
     " :W: Write every open window. Handy for kicking off tools like guard.
 
 " Snippets and Dependencies
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "honza/snipmate-snippets"
-Bundle "garbas/vim-snipmate"
+" Bundle "MarcWeber/vim-addon-mw-utils"
+" Bundle "tomtom/tlib_vim"
+" Bundle "honza/snipmate-snippets"
+" Bundle "garbas/vim-snipmate"
 
 " Colorschemes
 Bundle 'altercation/vim-colors-solarized'
@@ -331,6 +331,8 @@ inoremap OF <End>
 
 " ,rt -> regeneriert tags mit gems
 map <leader>rt :!ctags --extra=+f --languages=-javascript --exclude=.git --exclude=log -R * `rvm gemdir`/gems/* `rvm gemdir`/bundler/gems/*<CR><C-M>
+
+map <leader>spec :exe "!bundle exec rspec % -l " . line(".")<CR>
 
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
