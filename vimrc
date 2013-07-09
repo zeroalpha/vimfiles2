@@ -82,15 +82,15 @@ Bundle "tpope/vim-eunuch"
     " :W: Write every open window. Handy for kicking off tools like guard.
 
 " Snippets and Dependencies
-" Bundle "MarcWeber/vim-addon-mw-utils"
-" Bundle "tomtom/tlib_vim"
-" Bundle "honza/snipmate-snippets"
-" Bundle "garbas/vim-snipmate"
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
 
 " Colorschemes
 Bundle 'altercation/vim-colors-solarized'
 " Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " set rtp+={path}/powerline/bindings/vim
+Bundle "bling/vim-airline"
 
 
 " Bundle 'airblade/vim-gitgutter'
