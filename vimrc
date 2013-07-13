@@ -23,6 +23,11 @@ Bundle "tpope/vim-rake"
 Bundle "kchmck/vim-coffee-script"
 Bundle 'derekwyatt/vim-scala'
 
+" Clojure
+Bundle 'tpope/vim-fireplace'
+Bundle 'tpope/vim-classpath'
+Bundle 'guns/vim-clojure-static'
+
 
 Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
@@ -85,13 +90,13 @@ Bundle "tpope/vim-eunuch"
 " Snippets and Dependencies
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
-Bundle "honza/snipmate-snippets"
 Bundle "garbas/vim-snipmate"
 
 " Colorschemes
 Bundle 'altercation/vim-colors-solarized'
 " Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " set rtp+={path}/powerline/bindings/vim
+Bundle "bling/vim-airline"
 
 
 " relative number lines toggle
@@ -336,6 +341,8 @@ inoremap OF <End>
 
 " ,rt -> regeneriert tags mit gems
 map <leader>rt :!ctags --extra=+f --languages=-javascript --exclude=.git --exclude=log -R * `rvm gemdir`/gems/* `rvm gemdir`/bundler/gems/*<CR><C-M>
+
+map <leader>spec :exe "!bundle exec rspec % -l " . line(".")<CR>
 
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
