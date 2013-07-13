@@ -94,6 +94,10 @@ Bundle 'altercation/vim-colors-solarized'
 " set rtp+={path}/powerline/bindings/vim
 
 
+" relative number lines toggle
+" Bundle "myusuf3/numbers.vim"
+
+" Inline GIT Stuff in number list, like modified lines ~ slow
 " Bundle 'airblade/vim-gitgutter'
 
 if has('autocmd')
@@ -457,3 +461,4 @@ if &term =~ '256color'
   " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
   set t_ut=
 endif
+Bundle 'rking/ag.vim'
