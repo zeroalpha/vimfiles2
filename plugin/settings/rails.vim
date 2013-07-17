@@ -36,6 +36,15 @@ let g:rails_gem_projections = {
   \   "ActiveAdmin.register %S do\n\n  # form do\n  # end\n\n  #menu parent: '', label: ''\n\n  # index do\n  # end\n\nend\n"
   \ }
 \ },
+\ "cancan": {
+\   "app/models/*ability.rb": {
+\   "command": "ability",
+\   "keywords": "can cannot"
+\   },
+\   "app/models/ability.rb": {
+\   "command": "ability",
+\   }
+\ },
 \ "carrierwave": {
 \   "app/uploaders/*_uploader.rb": {
 \   "command": "uploader",
