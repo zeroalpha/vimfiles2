@@ -19,32 +19,8 @@ namespace :vim do
     SH
   end
 end
-desc "Install dependencies, download and compile vim"
+desc "Install dependencies (sudo), download and compile vim (on ~/.src)"
 task :vim => ["vim:dep", "vim:compile"]
-
-namespace :powerline do
-  desc "install powerline"
-  task :install do
-    sh <<-CMD
-      sudo apt-get install python-pip
-      pip install --user -U git+git://github.com/Lokaltog/powerline
-    CMD
-  end
-  desc "install powerline fonts"
-  task :font do
-    sh <<-CMD
-      mkdir -p ~/.fonts
-      wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf -O ~/.fonts/PowerlineSymbols.otf
-      fc-cache -vf ~/.fonts
-      mkdir -p ~/.config/fontconfig/conf.d/
-      mkdir -p ~/.fonts.conf.d
-      wget https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf -P ~/.config/fontconfig/conf.d/10-powerline-symbols.conf
-      cp ~/.config/fontconfig/conf.d/10-powerline-symbols.conf ~/.fonts.conf.d/10-powerline-symbols.conf
-      echo "Fonts installed, restart terminal"
-    CMD
-  end
-end
-task :powerline => ["powerline:font", "powerline:install"]
 
 desc "Symlink vimrc/gvimrc"
 task :symlink do
@@ -56,7 +32,7 @@ end
 
 namespace :bundle do
   desc "Install Vundle"
-  task :clone do
+  task :vundle do
     sh <<-SH
     mkdir -p ~/.vim/bundle
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
@@ -71,4 +47,4 @@ namespace :bundle do
   end
 end
 task :bundle => ["bundle:install"]
-task :all => [:symlink, "bundle:clone", "bundle:install", :powerline]
+task :all => [:symlink, "bundle:clone", "bundle:install"]

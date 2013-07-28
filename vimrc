@@ -21,6 +21,7 @@ Bundle 'tpope/vim-git'
 Bundle "tpope/vim-rails"
 Bundle "tpope/vim-rake"
 Bundle "kchmck/vim-coffee-script"
+Bundle 'derekwyatt/vim-scala'
 
 " Clojure
 Bundle 'tpope/vim-fireplace'
@@ -100,6 +101,10 @@ Bundle "bling/vim-airline"
 Bundle 'rainerborene/vim-timetap'
 
 
+" relative number lines toggle
+" Bundle "myusuf3/numbers.vim"
+
+" Inline GIT Stuff in number list, like modified lines ~ slow
 " Bundle 'airblade/vim-gitgutter'
 
 if has('autocmd')
@@ -465,3 +470,4 @@ if &term =~ '256color'
   " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
   set t_ut=
 endif
+Bundle 'rking/ag.vim'
