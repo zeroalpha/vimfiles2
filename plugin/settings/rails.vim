@@ -45,6 +45,15 @@ let g:rails_gem_projections = {
 \   "command": "ability",
 \   }
 \ },
+\ "simple-navigation": {
+\   "config/*navigation.rb": {
+\   "command": "navigation",
+\   "keywords": "item primary navigation"
+\   },
+\   "config/navigation.rb": {
+\   "command": "navigation",
+\   }
+\ },
 \ "carrierwave": {
 \   "app/uploaders/*_uploader.rb": {
 \   "command": "uploader",

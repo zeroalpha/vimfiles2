@@ -97,6 +97,8 @@ Bundle 'altercation/vim-colors-solarized'
 " set rtp+={path}/powerline/bindings/vim
 Bundle "bling/vim-airline"
 
+Bundle 'rainerborene/vim-timetap'
+
 
 " Bundle 'airblade/vim-gitgutter'
 
