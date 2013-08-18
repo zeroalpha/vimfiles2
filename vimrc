@@ -95,12 +95,13 @@ Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 
 " Colorschemes
+Bundle "junegunn/seoul256.vim"
 Bundle 'altercation/vim-colors-solarized'
 " Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " set rtp+={path}/powerline/bindings/vim
 Bundle "bling/vim-airline"
 
-Bundle 'rainerborene/vim-timetap'
+" Bundle 'rainerborene/vim-timetap'
 
 
 " relative number lines toggle
@@ -179,7 +180,7 @@ set nonumber			      " show line numbers
 let g:solarized_termcolors=256
 set t_Co=256
 set background=dark
-colorscheme railscasts
+colorscheme seoul256
 "set colorcolumn=80    " display a line in column 80 to show you
                       " when to line break.
 
@@ -322,6 +323,8 @@ endif
 " ----------------------------------------------------------------------------
 "  mapping
 " ----------------------------------------------------------------------------
+map Q <Nop>
+map K 5k
 nmap <F1> <Esc>
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 map <C-Right> gt
@@ -376,9 +379,7 @@ else
 endif
 
 " ----------------------------------------------------------------------------
-"  command line editing
-" ----------------------------------------------------------------------------
-set history=200 		" Save more commands in history
+"  command line editing " ---------------------------------------------------------------------------- set history=200 		" Save more commands in history
                     " See Practical Vim, by Drew Neil, pg 68
 
 set wildmode=list:longest,full
