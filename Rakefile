@@ -46,5 +46,6 @@ namespace :bundle do
     CMD
   end
 end
+desc "use vundle to install new Vim plugins"
 task :bundle => ["bundle:install"]
 task :all => [:symlink, "bundle:clone", "bundle:install"]
