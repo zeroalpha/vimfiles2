@@ -22,6 +22,8 @@ Bundle "tpope/vim-rails"
 Bundle "tpope/vim-rake"
 Bundle "kchmck/vim-coffee-script"
 Bundle 'derekwyatt/vim-scala'
+" Javascript
+Bundle "othree/javascript-libraries-syntax.vim"
 
 " Clojure
 Bundle 'tpope/vim-fireplace'
