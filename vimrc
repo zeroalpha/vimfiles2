@@ -21,6 +21,8 @@ Bundle 'tpope/vim-git'
 Bundle "tpope/vim-rails"
 Bundle "tpope/vim-rake"
 Bundle "kchmck/vim-coffee-script"
+Bundle "othree/html5.vim"
+Bundle "tpope/vim-liquid"
 
 " Clojure
 Bundle 'tpope/vim-fireplace'
