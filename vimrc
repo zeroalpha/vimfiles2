@@ -38,6 +38,15 @@ Bundle 'guns/vim-clojure-static'
 
 Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
+" dar -> ir, ar -> ruby blocks
+Bundle 'kana/vim-textobj-indent'
+" dai  -> i and I as Text objects for marking same indented lines
+Bundle 'kana/vim-textobj-syntax'
+" day  -> y and Y: same syntax colored things
+Bundle 'kana/vim-textobj-line'
+" dal, dil -> line
+Bundle 'thinca/vim-textobj-between'
+" af<char>
 
 " Windows Powershell
 " Bundle 'dougireton/vim-ps1'
@@ -109,6 +118,7 @@ Bundle 'altercation/vim-colors-solarized'
 " Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " set rtp+={path}/powerline/bindings/vim
 Bundle "bling/vim-airline"
+Bundle "MaxSt/FlatColor"
 
 " Bundle 'rainerborene/vim-timetap'
 
