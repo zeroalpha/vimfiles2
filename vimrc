@@ -24,6 +24,7 @@ Bundle "kchmck/vim-coffee-script"
 Bundle "othree/html5.vim"
 Bundle "tpope/vim-liquid"
 Bundle 'derekwyatt/vim-scala'
+Bundle 'slim-template/vim-slim'
 Bundle 'honza/dockerfile.vim'
 
 
@@ -63,6 +64,8 @@ Bundle 'tpope/vim-fugitive'
     " Gdiff, Gedit Gstatus Gcommit Gremove Gmove Gread Ggrep
 Bundle 'gregsexton/gitv'
     " :Gitv  Mini-Git browser
+Bundle 'tmatilai/gitolite.vim'
+
 
 " Lightweight support for Ruby's Bundler
 Bundle 'tpope/vim-bundler'

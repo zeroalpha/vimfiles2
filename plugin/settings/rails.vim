@@ -18,7 +18,7 @@ let g:rails_projections = {
 \   "affinity": "model",
 \   "related": "app/models/%s.rb",
 \   "template":
-\   "ActiveAdmin.register %S do\n\n  # form do\n  # end\n\n  #menu parent: '', label: ''\n\n  # index do\n  # end\n\nend\n"
+\   "ActiveAdmin.register %S do\n\n  # form do |f|\n   # f.inputs do\n   # end\n   # f.actions\n  # end\n\n  #menu parent: '', label: ''\n\n  # index do\n  #default_actions\n  # end\n\nend\n"
 \ },
 \ "config/*.rb": { "command": "config"  },
 \ "spec/support/*.rb": {"command": "support"},
@@ -77,3 +77,7 @@ let g:rails_gem_projections = {
 \   }
 \  }
 \ }
+
+
+au BufRead,BufNewFile *.rabl syn keyword rubyRabl node attribute object child collection attributes glue extends
+au BufRead,BufNewFile *.rabl hi def link rubyRabl Function
