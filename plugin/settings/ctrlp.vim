@@ -12,4 +12,5 @@ nnoremap <C-b> :CtrlPBuffer<cr>
 
 " registers = cr
 " marks = c'
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$|vendor\/gems|.\/cookbooks'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$|vendor\/gems|.\/cookbooks|.*_site\/.*'
+

@@ -21,8 +21,13 @@ Bundle 'tpope/vim-git'
 Bundle "tpope/vim-rails"
 Bundle "tpope/vim-rake"
 Bundle "kchmck/vim-coffee-script"
+Bundle "othree/html5.vim"
+Bundle "tpope/vim-liquid"
 Bundle 'derekwyatt/vim-scala'
 Bundle 'slim-template/vim-slim'
+Bundle 'honza/dockerfile.vim'
+
+
 " Javascript
 Bundle "othree/javascript-libraries-syntax.vim"
 
@@ -96,6 +101,10 @@ Bundle "tpope/vim-eunuch"
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
+
+" F2 -> Save last macro,  F3 load last macro
+" let marvim_store = '//.vim/marvim'
+Bundle "marvim"
 
 " Colorschemes
 Bundle "junegunn/seoul256.vim"
@@ -348,6 +357,7 @@ map OF <End>
 
 inoremap OH <Home>
 inoremap OF <End>
+inoremap \fn <C-R>=expand("%")<CR>
 
 " ,rt -> regeneriert tags mit gems
 map <leader>rt :!ctags --extra=+f --languages=-javascript --exclude=.git --exclude=log -R * `rvm gemdir`/gems/* `rvm gemdir`/bundler/gems/*<CR><C-M>
