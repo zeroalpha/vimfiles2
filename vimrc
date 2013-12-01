@@ -24,6 +24,7 @@ Bundle "kchmck/vim-coffee-script"
 Bundle "othree/html5.vim"
 Bundle "tpope/vim-liquid"
 Bundle 'derekwyatt/vim-scala'
+Bundle 'slim-template/vim-slim'
 Bundle 'honza/dockerfile.vim'
 Bundle 'stefanoverna/vim-i18n'
   " extract text from ruby views into config/locales
@@ -41,8 +42,18 @@ Bundle 'guns/vim-clojure-static'
 
 Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
+" dar -> ir, ar -> ruby blocks
 Bundle 'camelcasemotion'
 " vi,w
+Bundle 'kana/vim-textobj-indent'
+" dai  -> i and I as Text objects for marking same indented lines
+Bundle 'kana/vim-textobj-syntax'
+" day  -> y and Y: same syntax colored things
+Bundle 'kana/vim-textobj-line'
+" dal, dil -> line
+Bundle 'thinca/vim-textobj-between'
+" af<char>
+>>>>>>> 34f7bbea7e1c952d99bdd532c3c8ffba65cf9add
 
 " Windows Powershell
 " Bundle 'dougireton/vim-ps1'
@@ -59,6 +70,8 @@ Bundle 'tpope/vim-fugitive'
     " Gdiff, Gedit Gstatus Gcommit Gremove Gmove Gread Ggrep
 Bundle 'gregsexton/gitv'
     " :Gitv  Mini-Git browser
+Bundle 'tmatilai/gitolite.vim'
+
 
 " Lightweight support for Ruby's Bundler
 Bundle 'tpope/vim-bundler'
@@ -114,6 +127,7 @@ Bundle 'altercation/vim-colors-solarized'
 " Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " set rtp+={path}/powerline/bindings/vim
 Bundle "bling/vim-airline"
+Bundle "MaxSt/FlatColor"
 
 " Bundle 'rainerborene/vim-timetap'
 
