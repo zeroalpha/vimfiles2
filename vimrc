@@ -53,7 +53,6 @@ Bundle 'kana/vim-textobj-line'
 " dal, dil -> line
 Bundle 'thinca/vim-textobj-between'
 " af<char>
->>>>>>> 34f7bbea7e1c952d99bdd532c3c8ffba65cf9add
 
 " Windows Powershell
 " Bundle 'dougireton/vim-ps1'
