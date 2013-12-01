@@ -22,6 +22,7 @@ Bundle "tpope/vim-rails"
 Bundle "tpope/vim-rake"
 Bundle "kchmck/vim-coffee-script"
 Bundle 'derekwyatt/vim-scala'
+Bundle 'slim-template/vim-slim'
 " Javascript
 Bundle "othree/javascript-libraries-syntax.vim"
 
@@ -49,6 +50,8 @@ Bundle 'tpope/vim-fugitive'
     " Gdiff, Gedit Gstatus Gcommit Gremove Gmove Gread Ggrep
 Bundle 'gregsexton/gitv'
     " :Gitv  Mini-Git browser
+Bundle 'tmatilai/gitolite.vim'
+
 
 " Lightweight support for Ruby's Bundler
 Bundle 'tpope/vim-bundler'
