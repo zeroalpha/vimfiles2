@@ -1,0 +1,8 @@
+bundle:clone
+bundle:install
+powerline:font
+powerline:install
+symlink
+vim
+vim:compile
+vim:dep

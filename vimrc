@@ -25,6 +25,9 @@ Bundle "othree/html5.vim"
 Bundle "tpope/vim-liquid"
 Bundle 'derekwyatt/vim-scala'
 Bundle 'honza/dockerfile.vim'
+Bundle 'stefanoverna/vim-i18n'
+  " extract text from ruby views into config/locales
+
 
 
 " Javascript
@@ -38,6 +41,8 @@ Bundle 'guns/vim-clojure-static'
 
 Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'camelcasemotion'
+" vi,w
 
 " Windows Powershell
 " Bundle 'dougireton/vim-ps1'
@@ -113,9 +118,6 @@ Bundle "bling/vim-airline"
 " Bundle 'rainerborene/vim-timetap'
 
 
-" relative number lines toggle
-" Bundle "myusuf3/numbers.vim"
-
 " Inline GIT Stuff in number list, like modified lines ~ slow
 " Bundle 'airblade/vim-gitgutter'
 
@@ -149,7 +151,7 @@ set smartcase			  " override 'ignorecase' when pattern
 " ----------------------------------------------------------------------------
 
 set tags=tags;/     "ctags soll nach "tags" auch rekursiv suchen
-set tags+=gems.tags
+set tags+=.tags
 set tags+=;
 
 " ----------------------------------------------------------------------------
@@ -181,7 +183,11 @@ if &listchars ==# 'eol:$'
   endif
 endif
 
-set nonumber			      " show line numbers
+" if exists("&relativenumber")
+"   set number			      " show line numbers
+"   set relativenumber
+" endif
+
 
 " ----------------------------------------------------------------------------
 "  syntax, highlighting and spelling
@@ -288,6 +294,7 @@ endif
 
 set showmatch  			    " when inserting a bracket, briefly jump to its
                         " match
+let g:matchparen_insert_timeout=5 " Performance increase for large file
 
 set nojoinspaces	  	  " Use only one space after '.' when joining
                         " lines, instead of two
