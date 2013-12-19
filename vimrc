@@ -29,6 +29,7 @@ Bundle 'honza/dockerfile.vim'
 Bundle 'stefanoverna/vim-i18n'
   " extract text from ruby views into config/locales
 
+Bundle 'elixir-lang/vim-elixir'
 
 
 " Javascript
