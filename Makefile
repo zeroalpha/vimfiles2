@@ -1,3 +1,5 @@
+.PHONY : bundle ubuntu vim_source symlink vundle install
+
 bundle:
 	vim +BundleInstall +qall
 
@@ -15,13 +17,13 @@ vim_source:
 	sudo make install
 
 symlink:
-	ln -s ~/.vim/vimrc ~/.vimrc
-	ln -s ~/.vim/gvimrc ~/.gvimrc
+	-ln -s ~/.vim/vimrc ~/.vimrc
+	-ln -s ~/.vim/gvimrc ~/.gvimrc
 
 vundle:
 	mkdir -p ~/.vim/bundle
-	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+	-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 
-install: symlink vundle bundle
+install : symlink vundle bundle
 
