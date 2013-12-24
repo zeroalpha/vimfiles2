@@ -58,6 +58,16 @@ Bundle 'thinca/vim-textobj-between'
 " Windows Powershell
 " Bundle 'dougireton/vim-ps1'
 
+Bundle 'tpope/vim-vinegar'
+" Press - in any buffer to hop up to the directory listing and seek to the file you just came from. Keep bouncing to go up, up, up. Having rapid directory access available changes everything.
+" All that annoying crap at the top is turned off, leaving you with nothing but a list of files. This is surprisingly disorienting, but ultimately very liberating. Press I to toggle until you adapt.
+" The oddly C-biased default sort order and file hiding is replaced with a sensible application of 'suffixes' and 'wildignore'.
+" Press . on a file to pre-populate it at the end of a : command line. This is great, for example, to quickly initiate a :grep of the file or directory under the cursor. There's also !, which starts the line off with a bang. Type !chmod +x and get :!chmod +x path/to/file.
+" Press cd or cl to :cd or :lcd to the currently edited directory.
+" Press ~ to go home.
+
+
+
 " Comment plugin
 Bundle 'tpope/vim-commentary'
     " gc<MOVE>  or gcc , repeat with .
