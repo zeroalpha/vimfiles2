@@ -86,6 +86,8 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
    " Parentheses, html tags surround:
    "  * visual select:  S followed by on char or html tag
+" Bundle 'skammer/vim-css-color'
+
 Bundle 'tpope/vim-unimpaired'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'file-line'
@@ -356,6 +358,7 @@ map Q <Nop>
 map K 5k
 nmap <F1> <Esc>
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+nnoremap <silent> <F6> :%g/^\s*#\\|^$/d<CR>
 map <C-Right> gt
 map <A-Right> gt
 map <C-Left> gT
