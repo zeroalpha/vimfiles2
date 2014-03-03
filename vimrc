@@ -27,6 +27,8 @@ Bundle 'derekwyatt/vim-scala'
 Bundle 'slim-template/vim-slim'
 Bundle 'honza/dockerfile.vim'
 Bundle 'stefanoverna/vim-i18n'
+Bundle 'Glench/Vim-Jinja2-Syntax'
+
   " extract text from ruby views into config/locales
 
 Bundle 'elixir-lang/vim-elixir'
@@ -518,3 +520,11 @@ if &term =~ '256color'
   set t_ut=
 endif
 Bundle 'rking/ag.vim'
+
+
+" allow project specific .vimrc, change to secure mode, so that files cannot
+"  do harmful stuff
+set exrc
+set secure
+
+
