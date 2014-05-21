@@ -27,9 +27,10 @@ Bundle 'derekwyatt/vim-scala'
 Bundle 'slim-template/vim-slim'
 Bundle 'honza/dockerfile.vim'
 Bundle 'stefanoverna/vim-i18n'
+" extract text from ruby views into config/locales
 Bundle 'Glench/Vim-Jinja2-Syntax'
+Bundle 'chase/vim-ansible-yaml'
 
-  " extract text from ruby views into config/locales
 
 Bundle 'elixir-lang/vim-elixir'
 
@@ -69,6 +70,11 @@ Bundle 'tpope/vim-vinegar'
 " Press ~ to go home.
 
 
+Bundle 'tommcdo/vim-exchange'
+" cx  On the first use, define the first {motion} to exchange. On the second use, define the second {motion} and perform the exchange.
+" cxx Like cx, but use the current line.
+" X   Like cx, but for Visual mode.
+" cxc Clear any {motion} pending for exchange.
 
 " Comment plugin
 Bundle 'tpope/vim-commentary'
@@ -115,7 +121,9 @@ Bundle 'godlygeek/tabular'
 
 " File managers/explorers
 Bundle 'kien/ctrlp.vim'
+Bundle 'JazzCore/ctrlp-cmatcher'
 Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim'
 Bundle "tpope/vim-eunuch"
     " :Unlink: Delete a buffer and the file on disk simultaneously.
     " :Remove: Like :Unlink, but doesn't require a neckbeard.
@@ -519,7 +527,6 @@ if &term =~ '256color'
   " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
   set t_ut=
 endif
-Bundle 'rking/ag.vim'
 
 
 " allow project specific .vimrc, change to secure mode, so that files cannot
