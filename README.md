@@ -25,4 +25,4 @@ Vim files for Linux and Windows
     ````
    make install
     ```
-
+Big thanks to [zealot128](https://github.com/zealot128/vimfiles2) for introducing me to vim and providing a glorious set of plugins and settings neatly bundled
