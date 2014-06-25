@@ -5,7 +5,10 @@ Vim files for Linux and Windows
 
 
 ## First time install
+0. \curl -L https://raw.github.com/zeroalpha/vimfiles2/master/install.sh | bash
 
+
+## Manual Install
 1. Clone this repository:
 
     ```
@@ -25,4 +28,6 @@ Vim files for Linux and Windows
     ````
    make install
     ```
+
+####Credits
 Big thanks to [zealot128](https://github.com/zealot128/vimfiles2) for introducing me to vim and providing a glorious set of plugins and settings neatly bundled
