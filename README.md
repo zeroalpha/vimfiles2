@@ -4,7 +4,7 @@ Vimfiles
 Vim files for Linux and Windows
 
 
-## First time install
+## One line install
 0. \curl -L https://raw.github.com/zeroalpha/vimfiles2/master/install.sh | bash
 
 
@@ -29,5 +29,5 @@ Vim files for Linux and Windows
    make install
     ```
 
-####Credits
+#### Credits
 Big thanks to [zealot128](https://github.com/zealot128/vimfiles2) for introducing me to vim and providing a glorious set of plugins and settings neatly bundled
