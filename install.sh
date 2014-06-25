@@ -1,5 +1,5 @@
 #!/bin/sh
 
-git clone git@github.com:zealot128/vimfiles2.git ~/.vim
+git clone git@github.com:zeroalpha/vimfiles2.git ~/.vim
 cd ~/.vim
-rake all
+make install

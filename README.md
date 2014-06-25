@@ -13,20 +13,20 @@ Vim files for Linux and Windows
 
     ```
     $ git clone https://github.com/zerolpha/vimfiles2.git ~/.vim
-    cd ~/.vim
+    $ cd ~/.vim
     ````
 
 
 2. Optional: install vim with python and ruby support (needed for some plugins)
 
     ```
-    make vim_source
+    $ make vim_source
     ```
 
 3. Install Vundle, and Plugins and symlink vimrc to ~/.vimrc
 
     ````
-   make install
+   $ make install
     ```
 
 #### Credits
