@@ -11,8 +11,8 @@ vim_source:
 	cd ~/.src
 	wget ftp://ftp.vim.org/pub/vim/unix/vim-7.3.tar.bz2
 	tar jxf vim-7.3.tar.bz2
-	cd vim73/
-	./configure --with-features=huge --enable-gui=gnome2 --enable-rubyinterp --enable-pythoninterp
+	cd ~/src/vim73/
+	~/src/vim73/configure --with-features=huge --enable-gui=gnome2 --enable-rubyinterp --enable-pythoninterp
 	make
 	sudo make install
 
