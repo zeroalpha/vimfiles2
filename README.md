@@ -12,7 +12,7 @@ Vim files for Linux and Windows
 1. Clone this repository:
 
     ```
-    $ git clone https://github.com/zerolpha/vimfiles2.git ~/.vim
+    $ git clone https://github.com/zeroalpha/vimfiles2.git ~/.vim
     $ cd ~/.vim
     ````
 
@@ -30,4 +30,4 @@ Vim files for Linux and Windows
     ```
 
 #### Credits
-Big thanks to [zealot128](https://github.com/zealot128/vimfiles2) for introducing me to vim and providing a glorious set of plugins and settings neatly bundled
+Big thanks to [zealot128](https://github.com/zealot128/vimfiles2) for introducing me to vim and providing this glorious set of plugins and settings neatly bundled
