@@ -26,7 +26,7 @@ Bundle "tpope/vim-liquid"
 Bundle 'derekwyatt/vim-scala'
 Bundle 'slim-template/vim-slim'
 Bundle 'honza/dockerfile.vim'
-Bundle 'stefanoverna/vim-i18n'
+" Bundle 'stefanoverna/vim-i18n'
 " extract text from ruby views into config/locales
 Bundle 'Glench/Vim-Jinja2-Syntax'
 Bundle 'chase/vim-ansible-yaml'
